@@ -56,15 +56,15 @@ export const query = graphql`
 `
 // Soruce : https://github.com/gatsbyjs/gatsby/blob/master/packages/gatsby-source-contentful/CHANGELOG.md
 const Blog = props => {
-  console.log(props)
+  // console.log(props)
   const options = {
     renderNode: {
       [BLOCKS.EMBEDDED_ASSET]: node => {
-        console.log(node)
+        // console.log(node)
           return (<Img alt={node.data.target.title} {...node.data.target} />)
     },
     [INLINES.HYPERLINK]: vid => {
-      console.log(vid)
+      // console.log(vid)
       if ( vid.data.uri.indexOf('youtube.com') !== -1 ) {
         return(
           <iframe title="video about gatsby" width="714" height="430" src={vid.data.uri}  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen />
